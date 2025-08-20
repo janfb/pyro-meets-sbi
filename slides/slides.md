@@ -35,7 +35,7 @@ style: |
     transform: translateY(-50%);
     width: 220px;
     height: 300px;
-    background-image: url('./aai_logo.svg');
+    background-image: url('./images/aai_logo.svg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -169,7 +169,7 @@ There might be a global and a local recipe
 </div>
 <div>
 
-![Chips per Location](./chips_per_location.png)
+![Chips per Location](./images/chips_per_location.png)
 
 *Chocolate chips across 5 factory locations*
 
@@ -539,7 +539,7 @@ def sbi_cookie_model(locations, chips):
 
 ## Comparison: Pyro vs SBI posteriors for the Hierarchical Model
 
-![width:1000px](./sbi_pyro_posteriors.png)
+![width:1000px](./images/sbi_pyro_posteriors.png)
 
 
 ---
@@ -715,7 +715,7 @@ def hierarchical_ddm(data):
 <div class="columns">
 <div>
 
-![transferlab](./tfl_ad.png)
+![transferlab](./images/tfl_ad.png)
 
 </div>
 <div>
@@ -725,7 +725,7 @@ def hierarchical_ddm(data):
 - Win a **mechanical keyboard**! 🤗
 
 
-![width:350px center](./aai_euroscipy_quiz.png)
+![width:350px center](./images/aai_euroscipy_quiz.png)
 
 
 </div>
