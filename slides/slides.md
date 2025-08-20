@@ -78,6 +78,11 @@ style: |
     font-weight: 600;
   }
 
+  img[alt~="center"] {
+    display: block;
+    margin: 0 auto;
+  }
+
   /* Headings styling */
 ---
 
@@ -87,9 +92,27 @@ style: |
 
 <br>
 
-EuroScipy 2025, Kraków, Poland
+[EuroScipy 2025](https://euroscipy.org/), Kraków, Poland
 
-### Jan Teusen (né Boelts), TransferLab, appliedAI Institute for Europe
+### [Jan Teusen](https://janfb.github.io/) (né Boelts)
+
+Slides available at [EuroSciPy website](https://github.com/janfb/pyro-meets-sbi)
+
+---
+
+## About Me
+
+- Maintainer of the [`sbi` package](https://sbi.readthedocs.io/en/latest/)
+
+**Background**
+
+- PhD in Machine Learning and Neuroscience in Tübingen, Germany
+- Focus on "AI for Science"
+
+**Current Role**
+
+- Researcher @ [TransferLab, appliedAI Institute for Europe](https://transferlab.ai/about/)
+- OSS, AI research, AI education
 
 ---
 
@@ -137,12 +160,11 @@ chips:    [12, 12, 6, ..., 20, 11, 14]
 **Observations:**
 
 - Different means across locations
-- Variance !≈ mean for some locations
 - 150 total observations
 - 30 cookies per location
 
 **Key insight:**
-Global patterns and local variations
+There might be a global and a local recipe
 
 </div>
 <div>
@@ -159,8 +181,6 @@ Global patterns and local variations
 ## How Do We Model This?
 
 **Step 1: Choose a Probabilistic Model**
-
-A probabilistic model specifies:
 
 - **Likelihood**: How data is generated given parameters
   - `chips ~ Poisson(rate)`
@@ -364,7 +384,8 @@ def complex_simulator(params):
 - P(data|params) = ???
 
 **The SBI Solution:**
-Learn the likelihood from simulations!
+
+Neural Likelihood Estiamtion (NLE):
 
 1. Simulate (params, data) pairs
 2. Train neural network
@@ -395,7 +416,7 @@ neural_likelihood = train(dataset)
 </div>
 </div>
 
----
+<!-- ---
 
 ## Three Flavors of Neural <span class="highlight-simulation">Simulation-Based Inference </span>
 
@@ -409,7 +430,7 @@ neural_likelihood = train(dataset)
 
 <br>
 
-**We focus on NLE,** as it learns the single-trial likelihood.
+**We focus on NLE,** as it learns the single-trial likelihood. -->
 
 ---
 
@@ -453,7 +474,7 @@ def sbi_pyro_model(x_o=None):
 <br>
 
 - We wrap `sbi` NLE object into a `pyro` distribution
-- `SBItoPyro`: Class with 150 lines, mostly shape handling
+- `SBItoPyro` wrapper: Class with 150 lines, mostly shape handling for `pyro`
 
 ---
 
@@ -512,6 +533,14 @@ def sbi_cookie_model(locations, chips):
 
 </div>
 </div>
+
+
+---
+
+## Comparison: Pyro vs SBI posteriors for the Hierarchical Model
+
+![width:1000px](./sbi_pyro_posteriors.png)
+
 
 ---
 
@@ -579,7 +608,7 @@ def hierarchical_ddm(data):
 **Rule of thumb**: If you can write the likelihood, use standard Pyro. If not, add SBI!
 
 
----
+<!-- ---
 
 ## Summary: Why This Matters
 
@@ -593,7 +622,7 @@ def hierarchical_ddm(data):
 - Use "any" simulator (s.t., fast enough) ✅
 - No approximations of simulator ✅
 - Pyro enables efficient experimentation with hierarchical models ✅
-- Best of both worlds! 🎉
+- Best of both worlds! 🎉 -->
 
 ---
 
@@ -633,7 +662,6 @@ def hierarchical_ddm(data):
 
 ---
 
-
 ## Key Takeaways
 
 1. **Probabilistic programming** makes Bayesian inference accessible
@@ -649,7 +677,7 @@ def hierarchical_ddm(data):
    - Pyro's elegant hierarchical modeling
    - SBI's ability to handle any simulator
 
----
+<!-- ---
 
 ## Resources & Next Steps
 
@@ -662,11 +690,11 @@ def hierarchical_ddm(data):
 
 **Papers:**
 - Cranmer et al. (2020): ["The frontier of simulation-based inference"](https://www.pnas.org/doi/10.1073/pnas.1912789117)
-- Deistler, Boelts et al. (2025), ["Simulation-based inference: a practical guide"](https://arxiv.org/abs/2508.12939)
+- Deistler, Boelts et al. (2025), ["Simulation-based inference: a practical guide"](https://arxiv.org/abs/2508.12939) -->
 
 ---
 
-## Credits & Acknowledgments
+## Acknowledgments
 
 **Cookie Example:**
 
@@ -694,8 +722,10 @@ def hierarchical_ddm(data):
 
 - We have a booth outside in the hall
 - There will be a Python Quiz
-- You can win a mechanical keyboard!
+- Win a **mechanical keyboard**! 🤗
 
-![transferlab](./tfl_ad_qr.png)
+
+![width:350px center](./aai_euroscipy_quiz.png)
+
 
 </div>
