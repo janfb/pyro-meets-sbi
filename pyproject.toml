@@ -1,0 +1,14 @@
+[project]
+name = "pyro-meets-sbi"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Jan Teusen (Boelts)", email = "jan.boelts@mailbox.org" }
+]
+requires-python = ">=3.10"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
