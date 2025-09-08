@@ -8,7 +8,6 @@ authors = [
 ]
 requires-python = ">=3.10"
 dependencies = [
-    # Single lightweight dependency set for notebooks and examples
     "sbi>=0.25.0",
     "pyro-ppl>=1.9",
     "torch>=2.1",
@@ -18,7 +17,6 @@ dependencies = [
 ]
 
 [tool.uv]
-# Treat this as a non-package (virtual) project: just manage dependencies.
 package = false
 
 [tool.uv.pip]
