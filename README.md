@@ -30,6 +30,7 @@ Welcome! This repository contains the slides and supporting materials for the ta
 4. Present: Command Palette → "Marp: Export Slide Deck..."
 
 ### Option 2: MARP CLI
+
 ```bash
 # Install MARP CLI
 npm install -g @marp-team/marp-cli
@@ -59,7 +60,9 @@ Complex simulators are ubiquitous in science—from neural circuits to climate m
 - **Practical Integration**: Wrapping SBI estimators as Pyro distributions
 
 ### Learning Outcomes
+
 After this talk, you will understand:
+
 1. When and why hierarchical models are beneficial
 2. How SBI enables inference for complex simulators
 3. How to combine Pyro and SBI in practice
@@ -67,7 +70,51 @@ After this talk, you will understand:
 
 ## Installation
 
-TBD.
+The easiest way is with uv (fast Python package manager and envs).
+
+1) Install uv (macOS)
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+# Ensure uv is on PATH (new shells will pick this up)
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+uv --version
+```
+
+1) Create and activate a virtual environment
+```bash
+cd pyro-meets-sbi
+uv venv .venv -p 3.11
+source .venv/bin/activate
+```
+
+1) Install dependencies
+- If the project has a pyproject.toml:
+```bash
+uv sync
+```
+- Otherwise, install the core deps:
+```bash
+uv pip install torch pyro-ppl sbi jupyterlab matplotlib seaborn ipywidgets
+```
+
+1) (Optional) Register a Jupyter kernel
+```bash
+python -m ipykernel install --user --name=pyro-meets-sbi
+```
+
+## Launching the Notebooks
+
+- JupyterLab (fetched via uvx or from your venv):
+```bash
+# From the repo root
+uvx jupyter lab
+# or, if JupyterLab installed in the venv:
+jupyter lab
+```
+Open:
+- `src/01_pyro_cookie_example.ipynb`
+- `src/02_pyro_sbi_cookie_example.ipynb`
 
 ## Resources
 
