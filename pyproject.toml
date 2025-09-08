@@ -7,8 +7,19 @@ authors = [
     { name = "Jan Teusen (Boelts)", email = "jan.boelts@mailbox.org" }
 ]
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+    # Single lightweight dependency set for notebooks and examples
+    "sbi>=0.25.0",
+    "pyro-ppl>=1.9",
+    "torch>=2.1",
+    "jupyterlab>=4",
+    "seaborn>=0.13",
+    "ipywidgets>=8.1.7",
+]
 
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+[tool.uv]
+# Treat this as a non-package (virtual) project: just manage dependencies.
+package = false
+
+[tool.uv.pip]
+torch-backend = "auto"
