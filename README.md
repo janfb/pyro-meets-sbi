@@ -78,13 +78,8 @@ python -m ipykernel install --user --name=pyro-meets-sbi
 
 ## Launching the Notebooks
 
-- JupyterLab (fetched via uvx or from your venv):
-
 ```bash
-# From the repo root
-uvx jupyter lab
-# or, if JupyterLab installed in the venv:
-jupyter lab
+jupyter notebook
 ```
 
 Open:
