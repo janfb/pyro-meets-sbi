@@ -67,7 +67,7 @@ def generate_cookie_data(spec: CookieDataSpec | None = None) -> pd.DataFrame:
 
 def get_default_data_path() -> Path:
     # This file lives at repo_root/src/pyro_meets_sbi/generate_data.py
-    repo_root = Path(__file__).resolve().parents[2]
+    repo_root = Path(__file__).resolve().parents[1]
     return repo_root / "data" / "cookie_chips_data.csv"
 
 

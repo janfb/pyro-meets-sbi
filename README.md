@@ -2,10 +2,12 @@
 
 **EuroSciPy 2025 Talk Materials**
 
-Welcome! This repository contains the slides and supporting materials for the talk "Pyro Meets SBI: Unlocking Hierarchical Bayesian Inference for Complex Simulators" presented at EuroSciPy 2025 in Kraków, Poland.
+Welcome! This repository contains the slides and supporting materials for the talk "Pyro
+Meets SBI: Unlocking Hierarchical Bayesian Inference for Complex Simulators" presented
+at EuroSciPy 2025 in Kraków, Poland.
 
 📍 **Talk Details**: [EuroSciPy 2025 - Pyro Meets SBI](https://euroscipy.org/talks/KCYYTF/)  
-🎯 **Tutorial**: See also the companion [SBI Tutorial](https://github.com/janfb/euroscipy-2025-sbi-tutorial) (90-minute hands-on session)
+🎯 **Tutorial**: See also the companion [SBI Tutorial](https://github.com/janfb/euroscipy-2025-sbi-tutorial)
 
 ## Quick Links
 
@@ -20,38 +22,12 @@ Welcome! This repository contains the slides and supporting materials for the ta
 - `slides/` folder with markdown slides and image files
 - `src/` folder with jupyter notebooks with code examples
 
-## Viewing the Slides
-
-### Option 1: VS Code with MARP Extension (Recommended)
-
-1. Install [Marp for VS Code](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode)
-2. Open `slides.md` in VS Code
-3. Preview with `Ctrl+K V` (Windows/Linux) or `Cmd+K V` (Mac)
-4. Present: Command Palette → "Marp: Export Slide Deck..."
-
-### Option 2: MARP CLI
-
-```bash
-# Install MARP CLI
-npm install -g @marp-team/marp-cli
-
-# Generate HTML presentation
-marp slides.md -o slides.html
-
-# Generate PDF handout
-marp slides.md -o slides.pdf
-
-# Start presentation server (with hot reload)
-marp -s slides.md
-```
-
-### Option 3: Online Viewer
-
-Upload `slides.md` to [Marp Web](https://web.marp.app/)
-
 ## Talk Abstract
 
-Complex simulators are ubiquitous in science—from neural circuits to climate models—but often lack tractable likelihood functions. This talk demonstrates how to combine Pyro's elegant probabilistic programming with Simulation-Based Inference (SBI) to perform hierarchical Bayesian inference on such models.
+Complex simulators are ubiquitous in science—from neural circuits to climate models—but
+often lack tractable likelihood functions. This talk demonstrates how to combine Pyro's
+elegant probabilistic programming with Simulation-Based Inference (SBI) to perform
+hierarchical Bayesian inference on such models.
 
 ### Key Topics Covered
 
@@ -66,13 +42,13 @@ After this talk, you will understand:
 1. When and why hierarchical models are beneficial
 2. How SBI enables inference for complex simulators
 3. How to combine Pyro and SBI in practice
-4. Best practices for diagnostic checks
 
 ## Installation
 
 The easiest way is with uv (fast Python package manager and envs).
 
 1) Install uv (macOS)
+
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 # Ensure uv is on PATH (new shells will pick this up)
@@ -81,24 +57,21 @@ source ~/.zshrc
 uv --version
 ```
 
-1) Create and activate a virtual environment
+2) Create and activate a virtual environment
+
 ```bash
 cd pyro-meets-sbi
 uv venv .venv -p 3.11
 source .venv/bin/activate
 ```
 
-1) Install dependencies
-- If the project has a pyproject.toml:
+3) Install dependencies
+
 ```bash
 uv sync
 ```
-- Otherwise, install the core deps:
-```bash
-uv pip install torch pyro-ppl sbi jupyterlab matplotlib seaborn ipywidgets
-```
 
-1) (Optional) Register a Jupyter kernel
+4) (Optional) Register a Jupyter kernel
 ```bash
 python -m ipykernel install --user --name=pyro-meets-sbi
 ```
@@ -106,12 +79,14 @@ python -m ipykernel install --user --name=pyro-meets-sbi
 ## Launching the Notebooks
 
 - JupyterLab (fetched via uvx or from your venv):
+
 ```bash
 # From the repo root
 uvx jupyter lab
 # or, if JupyterLab installed in the venv:
 jupyter lab
 ```
+
 Open:
 - `src/01_pyro_cookie_example.ipynb`
 - `src/02_pyro_sbi_cookie_example.ipynb`
@@ -125,13 +100,11 @@ Open:
 ](https://joss.theoj.org/papers/10.21105/joss.07754)
 - **SBI tutorial paper**: Deistler, Boelts et al. (2025) - [SBI: A practical guide](https://arxiv.org/abs/2508.12939)
 
-
 ### Documentation
 
 - **SBI Documentation**: [sbi.readthedocs.io/en/latest/](https://sbi.readthedocs.io/en/latest/)
 - **Pyro Documentation**: [docs.pyro.ai](http://docs.pyro.ai/)
 - **EuroSciPy SBI Tutorial**: [Link to GitHub](https://github.com/janfb/euroscipy-2025-sbi-tutorial)
-
 
 ## Acknowledgments
 

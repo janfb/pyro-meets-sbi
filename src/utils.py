@@ -13,8 +13,9 @@ from typing import Optional
 import numpy as np
 import pandas as pd
 import torch
-from generate_data import DEFAULT_LOCATION_RATES, get_default_data_path
 from sklearn.preprocessing import LabelEncoder
+
+from generate_data import DEFAULT_LOCATION_RATES, get_default_data_path
 
 
 @dataclass(frozen=True)
