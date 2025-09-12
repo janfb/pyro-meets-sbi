@@ -1,6 +1,6 @@
 # Pyro Meets SBI: Hierarchical Simulation-Based Bayesian Inference
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/janfb/pyro-meets-sbi/tree/main/src)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/janfb/pyro-meets-sbi)
 
 ## EuroSciPy 2025 Talk Materials
 
@@ -88,7 +88,12 @@ jupyter notebook
 Open:
 
 - `src/01_pyro_cookie_example.ipynb`
-- `src/02_pyro_sbi_cookie_example.ipynb`
+- `src/02_pyro-sbi_cookie_example.ipynb`
+
+### Open these notebooks in Colab
+
+[![Open 01 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/janfb/pyro-meets-sbi/blob/master/src/01_pyro_cookie_example.ipynb)
+[![Open 02 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/janfb/pyro-meets-sbi/blob/master/src/02_pyro-sbi_cookie_example.ipynb)
 
 ## Resources
 
