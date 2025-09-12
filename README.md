@@ -1,6 +1,8 @@
 # Pyro Meets SBI: Hierarchical Simulation-Based Bayesian Inference
 
-**EuroSciPy 2025 Talk Materials**
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/janfb/pyro-meets-sbi/tree/main/src)
+
+## EuroSciPy 2025 Talk Materials
 
 Welcome! This repository contains the slides and supporting materials for the talk "Pyro
 Meets SBI: Unlocking Hierarchical Bayesian Inference for Complex Simulators" presented
@@ -47,7 +49,7 @@ After this talk, you will understand:
 
 The easiest way is with uv (fast Python package manager and envs).
 
-1) Install uv (macOS)
+1. Install uv (macOS)
 
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -57,7 +59,7 @@ source ~/.zshrc
 uv --version
 ```
 
-2) Create and activate a virtual environment
+2. Create and activate a virtual environment
 
 ```bash
 cd pyro-meets-sbi
@@ -65,13 +67,14 @@ uv venv .venv -p 3.11
 source .venv/bin/activate
 ```
 
-3) Install dependencies
+3. Install dependencies
 
 ```bash
 uv sync
 ```
 
-4) (Optional) Register a Jupyter kernel
+4. (Optional) Register a Jupyter kernel
+
 ```bash
 python -m ipykernel install --user --name=pyro-meets-sbi
 ```
@@ -83,6 +86,7 @@ jupyter notebook
 ```
 
 Open:
+
 - `src/01_pyro_cookie_example.ipynb`
 - `src/02_pyro_sbi_cookie_example.ipynb`
 
@@ -91,8 +95,7 @@ Open:
 ### Papers
 
 - **SBI review paper**: Cranmer et al. (2020) - [The frontier of simulation-based inference](https://www.pnas.org/doi/10.1073/pnas.1912789117)
-- **SBI software paper**: Boelts, Deistler et al. (2024) - [sbi reloaded: a toolkit for simulation-based inference workflows
-](https://joss.theoj.org/papers/10.21105/joss.07754)
+- **SBI software paper**: Boelts, Deistler et al. (2024) - [sbi reloaded: a toolkit for simulation-based inference workflows](https://joss.theoj.org/papers/10.21105/joss.07754)
 - **SBI tutorial paper**: Deistler, Boelts et al. (2025) - [SBI: A practical guide](https://arxiv.org/abs/2508.12939)
 
 ### Documentation
@@ -108,8 +111,7 @@ This work has been made possible through the support and contributions of many:
 ### Communities
 
 - **SBI Community** - For developing and maintaining the `sbi` package, especially Seth Axen for implementing the Pyro wrapper during the SBI Hackathon 2024
-  - Special acknowledgment to **Seth Axen** who implemented the wrapper from `sbi` to
-    `pyro` (https://github.com/sbi-dev/sbi/pull/1491)
+  - Special acknowledgment to **Seth Axen** who implemented the wrapper from `sbi` to `pyro` ([sbi-dev/sbi#1491](https://github.com/sbi-dev/sbi/pull/1491))
 - **Pyro Community** - For creating an elegant probabilistic programming framework
 - **EuroSciPy 2025 Organizers** - For providing a platform to share this work
 
