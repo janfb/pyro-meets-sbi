@@ -15,7 +15,11 @@ import pandas as pd
 import torch
 from sklearn.preprocessing import LabelEncoder
 
-from generate_data import DEFAULT_LOCATION_RATES, get_default_data_path
+from generate_data import (
+    DEFAULT_LOCATION_RATES,
+    get_default_data_path,
+    load_or_generate_cookie_data,
+)
 
 
 @dataclass(frozen=True)
@@ -46,12 +50,8 @@ def load_cookie_dataset(path: Optional[Path] = None) -> CookieDataset:
       - path: the resolved CSV file path
     """
     csv_path = path or get_default_data_path()
-    if not csv_path.exists():
-        raise FileNotFoundError(
-            f"Dataset not found at {csv_path}. Run `python -m pyro_meets_sbi.generate_data`."
-        )
-
-    cookies = pd.read_csv(csv_path)
+    # Load from CSV if present; otherwise generate deterministically and optionally save.
+    cookies = load_or_generate_cookie_data(path=csv_path, save_if_missing=True)
     cookies["location"] = pd.Categorical(cookies["location"], ordered=True)
 
     location_stats = (

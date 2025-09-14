@@ -83,6 +83,45 @@ def save_cookie_data(df: pd.DataFrame, path: Path | None = None) -> Path:
     return path
 
 
+def load_or_generate_cookie_data(
+    path: Path | None = None,
+    spec: CookieDataSpec | None = None,
+    *,
+    save_if_missing: bool = False,
+) -> pd.DataFrame:
+    """Load the cookie dataset if present, otherwise generate it.
+
+    Args:
+        path: Optional path to CSV. Defaults to ``get_default_data_path()``.
+        spec: Optional data specification (rates, sample sizes, seed).
+        save_if_missing: If True, persist generated data to ``path``.
+
+    Returns:
+        The cookie dataset as a pandas DataFrame with columns ``chips`` (int) and
+        ``location`` (categorical ordered 1..L).
+    """
+    path = path or get_default_data_path()
+
+    try:
+        df = pd.read_csv(path)
+        # Coerce dtypes and categories for robustness
+        if "chips" in df.columns:
+            df["chips"] = df["chips"].astype(int)
+        if "location" in df.columns:
+            df["location"] = pd.Categorical(df["location"].astype(int), ordered=True)
+        return df
+    except FileNotFoundError:
+        spec = spec or CookieDataSpec()
+        df = generate_cookie_data(spec)
+        if save_if_missing:
+            try:
+                save_cookie_data(df, path)
+            except Exception:
+                # Non-fatal: return in-memory data even if saving fails
+                pass
+        return df
+
+
 def main() -> None:
     spec = CookieDataSpec()
     df = generate_cookie_data(spec)
