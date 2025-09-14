@@ -90,10 +90,10 @@ Open:
 - `src/01_pyro_cookie_example.ipynb`
 - `src/02_pyro-sbi_cookie_example.ipynb`
 
-### Open these notebooks in Colab
+### Open notebooks in Google Colab
 
-[![Open 01 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/janfb/pyro-meets-sbi/blob/master/src/01_pyro_cookie_example.ipynb)
-[![Open 02 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/janfb/pyro-meets-sbi/blob/master/src/02_pyro-sbi_cookie_example.ipynb)
+ - Notebook 1: [![Open 01 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/janfb/pyro-meets-sbi/blob/master/src/01_pyro_cookie_example.ipynb)
+- Notebook 2: [![Open 02 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/janfb/pyro-meets-sbi/blob/master/src/02_pyro-sbi_cookie_example.ipynb)
 
 ## Resources
 
