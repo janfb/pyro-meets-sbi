@@ -5,7 +5,7 @@ Generates a synthetic dataset for the cookie factory example and writes it to
 CSV for reuse in notebooks and scripts.
 
 Usage:
-    python -m pyro_meets_sbi.generate_data
+    python src/generate_data.py
 
 This will create `pyro-meets-sbi/data/cookie_chips_data.csv` at the repo root.
 """
@@ -66,9 +66,14 @@ def generate_cookie_data(spec: CookieDataSpec | None = None) -> pd.DataFrame:
 
 
 def get_default_data_path() -> Path:
-    # This file lives at repo_root/src/pyro_meets_sbi/generate_data.py
-    repo_root = Path(__file__).resolve().parents[1]
-    return repo_root / "data" / "cookie_chips_data.csv"
+    """Return the default CSV path relative to this file.
+
+    Works as long as this module is imported from the cloned repo, e.g., in Colab
+    after `%cd /content/pyro-meets-sbi`. It simply resolves
+    `../data/cookie_chips_data.csv` from the directory containing this file.
+    """
+    file_dir = Path(__file__).resolve().parent
+    return file_dir.parent / "data" / "cookie_chips_data.csv"
 
 
 def save_cookie_data(df: pd.DataFrame, path: Path | None = None) -> Path:
